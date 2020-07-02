@@ -24,6 +24,23 @@ console.log(nowDate);
 console.log(nowTime);
 
 updateDate.textContent = nowDate;
-updateTime.textContent = nowTime;
+
+
+
+function time() {
+    var d = new Date();
+    var s = ('0'+ d.getSeconds()).slice(-2);
+    var m = ('0'+ d.getMinutes()).slice(-2);
+    var h = d.getHours();
+    if(h >= 12){
+        updateTime.textContent = h + ":" + m + ":" + s + " pm";
+    } else if (h <= 11){
+        updateTime.textContent = h + ":" + m + ":" + s + " am";
+    }
+    
+  }
+  
+  setInterval(time, 1000);
+
 
 
