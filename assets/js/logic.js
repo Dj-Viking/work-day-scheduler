@@ -37,7 +37,6 @@ function time() {
     } else if (h <= 11){
         updateTime.textContent = h + ":" + m + ":" + s + " am";
     }
-    
   }
   
   setInterval(time, 1000);
