@@ -3,11 +3,49 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+        <!-- loading the UI libraries after the core libraries -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+        <!-- placing google fonts before assets css -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet"> 
+        <!-- placing the svg iconic library CDN before the assets css -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+        <link rel="stylesheet" href="./assets/css/styles.css" />
         <title>Work Day Scheduler</title>
-        <link rel="stylesheet" href="assets/css/styles.css">
     </head>
     <body>
+        <div class="container">
+            <div class="col-12 text-center mt-3">
+                <h1>
+                    Work Day Scheduler
+                </h1>
+            </div>
+            <div class="row">
+                <div class="col-6 text-right mt-3">
+                    <h2>
+                        Today's Date and Time: 
+                    </h2>
+                </div>
+                <div class="col-6 text-left mt-4">
+                    <div class="row">
+                    <p id="live-date"><!-- dynamically generated here --><p>
+                    <p class="ml-3" id="live-time">fadfa<!-- dynamically generated here --></p>
+                    </div>    
+                </div>
+            </div>
+        </div>
         
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- loading the UI libraries after the core libraries -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <!-- loading mobile touch punch after the UI libraries-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- loading moment.js before the assets js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
         <script src="assets/js/logic.js"></script>
     </body>
 </html>
