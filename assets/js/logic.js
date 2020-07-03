@@ -1,14 +1,14 @@
 // *DONE  THEN the current day is displayed at the top of the calendar
 
 // *DONE THEN I am presented with time blocks for standard business hours
-// *DONE WHEN I view the time blocks for that day
+// WHEN I view the time blocks for that day
 // THEN each time block is color-coded to indicate whether it is in the past, present, or future
 // *DONE  WHEN I click into a time block
 // *DONE  THEN I can enter an event
-// WHEN I click the save button for that time block
-// THEN the text for that event is saved in local storage
-// WHEN I refresh the page
-// THEN the saved events persist
+// *DONE  WHEN I click the save button for that time block
+// *DONE  THEN the text for that event is saved in local storage
+// *DONE  WHEN I refresh the page
+// *DONE  THEN the saved events persist
 
 
 
