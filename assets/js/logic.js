@@ -49,6 +49,9 @@ function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 };
 
+/**************** LOAD TASK START ***************** */
+/************************************************* */
+
 function loadTasks(){
     tasks = JSON.parse(localStorage.getItem("tasks"));
 
@@ -78,7 +81,11 @@ function loadTasks(){
     console.log(tasks);
 }
 loadTasks();
+/**************** LOAD TASK END ***************** */
+/************************************************* */
 
+/************** CREATE TASK START***************** */
+/************************************************* */
 function createTask(list, taskText){
     
     //select the area to append to loops through each element with the list array name
@@ -93,9 +100,16 @@ function createTask(list, taskText){
     loadDiv.className += "height-full-row no-left-margin padding-left-some ml-2";
     //append the new div with the localStorage info on it to the part of the document we want to append to.
     appendHere.appendChild(loadDiv);
-    
-    
 }
+/************** CREATE TASK END ***************** */
+/************************************************* */
+
+/**************** AUDIT TASK START ***************** */
+/************************************************* */
+
+
+/**************** AUDIT TASK END ***************** */
+/************************************************* */
 
 /*************** EDIT TASKS START **************** */
 /************************************************ */
