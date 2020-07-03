@@ -79,14 +79,18 @@ function loadTasks(){
 loadTasks();
 
 function createTask(list, taskText){
-
-    testDiv.id = "appendingDiv";
-    testDiv.innerText = taskText;
     
     var appendHere = document.querySelector(".row-" + list + "Append");
+    
+    var testDiv = document.createElement("div");
+    
+    testDiv.id = "appendingDiv";
+    
+    testDiv.innerText = taskText;
+    
+    
+    
     appendHere.appendChild(testDiv);
-    //had to to put the class name adder below the appending for some reason
-    document.getElementById("appendingDiv").className = "height-full-row no-left-margin padding-left-some ml-2";
     
 }
 
