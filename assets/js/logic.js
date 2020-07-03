@@ -79,19 +79,19 @@ loadTasks();
 /************************************************ */
 //select the element we want to edit by clicking it
 // clicking <p> element makes it <textarea> to edit inside
-$(".task-info").on("click", "p", function(){
+$(".task-info").on("click", "div", function(){
     console.log(this);
-    console.log("<p> element was clicked");
+    console.log("<div> element was clicked");
 
     var text = $(this)
         .text()
         .trim();
-    console.log("displaying the text inside <p>");
+    console.log("displaying the text inside <div>");
     console.log(text);
 
     var id = $(this)
         .attr("id");//getting the id of the element clicked
-    console.log("displaying the id of <p>");
+    console.log("displaying the id of <div>");
     console.log(id);
 
     var textInput = $("<textarea>")
@@ -99,7 +99,7 @@ $(".task-info").on("click", "p", function(){
         .attr("id", id)//setting the id of <textarea> to the same as <p>
         .val(text);
     $(this).replaceWith(textInput);
-    console.log("<p> got converted into <textarea>!!!");
+    console.log("<div> got converted into <textarea>!!!");
     textInput.trigger("focus");
 });
 
@@ -147,13 +147,13 @@ $(".row").on("click", ".save-button", function(){
     // //console.log($(this).children());
     
     //convert back into <p> element after saving
-    var taskP = $("<p>")
-        .addClass("ml-2")
+    var taskP = $("<div>")
+        .addClass("height-full-row no-left-margin padding-left-some")
         .attr("id", key)
         .text(text);
     
     $(".form-control").replaceWith(taskP);
-    console.log("converted <textarea> back into <p>");
+    console.log("converted <textarea> back into <div>");
 
 });
 /*************** EDIT TASKS END **************** */

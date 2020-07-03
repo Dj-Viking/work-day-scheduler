@@ -8,7 +8,22 @@
     border-left: solid 3px grey;
 }
 
+.height-full-row {
+    height: 100%;
+}
 
+.padding-left-right-none {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.no-left-margin {
+    margin-left: 0;
+}
+
+.padding-left-some{
+    padding-left: 15px;
+}
 
 textarea{
     background: transparent;
