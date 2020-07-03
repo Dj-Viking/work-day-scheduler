@@ -17,6 +17,9 @@ var tasks = {};
 
 var tempArr = []
 
+//instantiating the div we are appending with the info from local storage
+var testDiv = document.createElement("div");
+
 
 var nowDate = moment().format('MMMM Do YYYY');
 var nowTime = moment().format('h:mm:ss a');
@@ -67,13 +70,25 @@ function loadTasks(){
     $.each(tasks, function(list, arr) {
         console.log(list, arr);
         // then loop over sub-array
-        // arr.forEach(function(task) {
-        // createTask(task.text);
-        // });
+         arr.forEach(function(task) {
+         createTask(list, task.text);
+         });
     });
-    // console.log(tasks);
+    console.log(tasks);
 }
 loadTasks();
+
+function createTask(list, taskText){
+
+    testDiv.id = "appendingDiv";
+    testDiv.innerText = taskText;
+    
+    var appendHere = document.querySelector(".row-" + list + "Append");
+    appendHere.appendChild(testDiv);
+    //had to to put the class name adder below the appending for some reason
+    document.getElementById("appendingDiv").className = "height-full-row no-left-margin padding-left-some ml-2";
+    
+}
 
 /*************** EDIT TASKS START **************** */
 /************************************************ */
