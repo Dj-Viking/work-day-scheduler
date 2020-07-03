@@ -29,8 +29,6 @@ console.log(nowTime);
 
 updateDate.textContent = nowDate;
 
-
-
 function time() {
     var d = new Date();
     var s = ('0'+ d.getSeconds()).slice(-2);
@@ -44,11 +42,9 @@ function time() {
 }
   setInterval(time, 1000);
 
-
 function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 };
-
 
 function loadTasks(){
     tasks = JSON.parse(localStorage.getItem("tasks"));
@@ -78,8 +74,6 @@ function loadTasks(){
     // console.log(tasks);
 }
 loadTasks();
-
-
 
 /*************** EDIT TASKS START **************** */
 /************************************************ */
@@ -125,13 +119,11 @@ $(".row").on("click", ".save-button", function(){
     console.log(text);//text
     console.log(key);//id
     
-
     //save the text and the key into the localStorage array
 
     // //initializing a temp array to place task data as objects inside the array
     // //after the child element was updated
     var tempArr = []
-
 
 //   //add task data to the temp array as an object
     tempArr.push({
