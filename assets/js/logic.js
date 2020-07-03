@@ -18,10 +18,10 @@ var tasks = {};
 var tempArr = []
 
 //instantiating the div we are appending with the info from local storage
-var testDiv = document.createElement("div");
+var loadDiv = document.createElement("div");
 
 
-var nowDate = moment().format('MMMM Do YYYY');
+var nowDate = moment().format('dddd MMMM Do YYYY');
 var nowTime = moment().format('h:mm:ss a');
 
 var updateDate = document.querySelector("#live-date");
@@ -72,6 +72,7 @@ function loadTasks(){
         // then loop over sub-array
          arr.forEach(function(task) {
          createTask(list, task.text);
+         document.getElementById("appendingDiv").className = "height-full-row no-left-margin padding-left-some ml-2";
          });
     });
     console.log(tasks);
@@ -80,17 +81,19 @@ loadTasks();
 
 function createTask(list, taskText){
     
+    //select the area to append to loops through each element with the list array name
     var appendHere = document.querySelector(".row-" + list + "Append");
+    //create the element to append
+    var loadDiv = document.createElement("div");
+    //give it an id, doesn't work without it for some reason
+    loadDiv.id = "appendingDiv";
+    //push the text into the innerText area of the element
+    loadDiv.innerText = taskText;
+    //add the classes for each iteration of the loadTask loop above
+    loadDiv.className += "height-full-row no-left-margin padding-left-some ml-2";
+    //append the new div with the localStorage info on it to the part of the document we want to append to.
+    appendHere.appendChild(loadDiv);
     
-    var testDiv = document.createElement("div");
-    
-    testDiv.id = "appendingDiv";
-    
-    testDiv.innerText = taskText;
-    
-    
-    
-    appendHere.appendChild(testDiv);
     
 }
 
