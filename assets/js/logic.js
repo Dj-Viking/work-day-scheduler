@@ -1,8 +1,8 @@
 // *DONE  THEN the current day is displayed at the top of the calendar
 
 // *DONE THEN I am presented with time blocks for standard business hours
-// WHEN I view the time blocks for that day
-// THEN each time block is color-coded to indicate whether it is in the past, present, or future
+// *DONE  WHEN I view the time blocks for that day
+// *DONE  THEN each time block is color-coded to indicate whether it is in the past, present, or future
 // *DONE  WHEN I click into a time block
 // *DONE  THEN I can enter an event
 // *DONE  WHEN I click the save button for that time block
