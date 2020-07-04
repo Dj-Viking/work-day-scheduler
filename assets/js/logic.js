@@ -30,7 +30,12 @@ var updateTime = document.querySelector("#live-time");
 console.log(nowDate);
 console.log(nowTime);
 
-updateDate.textContent = nowDate;
+function updateTheDate(){
+    updateDate.textContent = nowDate;
+}
+setInterval(updateTheDate, (1000 * 60)* 30)
+updateTheDate();
+
 
 function time() {
     var d = new Date();
@@ -43,7 +48,8 @@ function time() {
         updateTime.textContent = h + ":" + m + ":" + s + " am";
     }
 }
-  setInterval(time, 1000);
+  setInterval(time, 100);
+//   setInterval(auditTasks, 1000);
 
 function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -74,13 +80,17 @@ function loadTasks(){
         console.log(list, arr);
         // then loop over sub-array
          arr.forEach(function(task) {
+            //   auditTasks();
+            
          createTask(list, task.text);
-         document.getElementById("appendingDiv").className = "height-full-row no-left-margin padding-left-some ml-2";
          });
     });
     console.log(tasks);
 }
+
+// auditTasks();
 loadTasks();
+
 /**************** LOAD TASK END ***************** */
 /************************************************* */
 
@@ -100,14 +110,97 @@ function createTask(list, taskText){
     loadDiv.className += "height-full-row no-left-margin padding-left-some ml-2";
     //append the new div with the localStorage info on it to the part of the document we want to append to.
     appendHere.appendChild(loadDiv);
+    // auditTasks();
+    
 }
 /************** CREATE TASK END ***************** */
 /************************************************* */
 
 /**************** AUDIT TASK START ***************** */
 /************************************************* */
-
-
+function auditTasks(){
+    
+    
+    var d = new Date();
+    var h = d.getHours(); 
+    //add the styles to the selected row by data hour if
+    //they are before, during, or after a certain hour
+    var dataHour = $(".task-info9").attr("data-hour");
+    if (dataHour < h){
+        $(".task-info9").addClass("past");
+    } else if (dataHour == h){
+        $(".task-info9").addClass("present");
+    } else {
+        $(".task-info9").addClass("future");
+    }
+    var dataHour = $(".task-info10").attr("data-hour");
+    if (dataHour < h){
+        $(".task-info10").addClass("past");
+    } else if (dataHour == h){
+        $(".task-info10").addClass("present");
+    } else {
+        $(".task-info10").addClass("future");
+    }
+    var dataHour = $(".task-info11").attr("data-hour");
+    if (dataHour < h){
+        $(".task-info11").addClass("past");
+    } else if (dataHour == h){
+        $(".task-info11").addClass("present");
+    } else {
+        $(".task-info11").addClass("future");
+    }
+    var dataHour = $(".task-info12").attr("data-hour");
+    if (dataHour < h){
+        $(".task-info12").addClass("past");
+    } else if (dataHour == h){
+        $(".task-info12").addClass("present");
+    } else {
+        $(".task-info12").addClass("future");
+    }
+    var dataHour = $(".task-info13").attr("data-hour");
+    if (dataHour < h){
+        $(".task-info13").addClass("past");
+    } else if (dataHour == h){
+        $(".task-info13").addClass("present");
+    } else {
+        $(".task-info13").addClass("future");
+    }
+    var dataHour = $(".task-info14").attr("data-hour");
+    if (dataHour < h){
+        $(".task-info14").addClass("past");
+    } else if (dataHour == h){
+        $(".task-info14").addClass("present");
+    } else {
+        $(".task-info14").addClass("future");
+    }
+    var dataHour = $(".task-info15").attr("data-hour");
+    if (dataHour < h){
+        $(".task-info15").addClass("past");
+    } else if (dataHour == h){
+        $(".task-info15").addClass("present");
+    } else {
+        $(".task-info15").addClass("future");
+    }
+    var dataHour = $(".task-info16").attr("data-hour");
+    if (dataHour < h){
+        $(".task-info16").addClass("past");
+    } else if (dataHour == h){
+        $(".task-info16").addClass("present");
+    } else {
+        $(".task-info16").addClass("future");
+    }
+    var dataHour = $(".task-info17").attr("data-hour");
+    if (dataHour < h){
+        $(".task-info17").addClass("past");
+    } else if (dataHour == h){
+        $(".task-info17").addClass("present");
+    } else {
+        $(".task-info17").addClass("future");
+    }
+    
+}
+setInterval(auditTasks, 100);     
+   
 /**************** AUDIT TASK END ***************** */
 /************************************************* */
 
