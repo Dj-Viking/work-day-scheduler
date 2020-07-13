@@ -16,6 +16,3 @@ https://dj-viking.github.io/work-day-scheduler/
     * The task info will be there when the page is opened from the same computer on the same browser it was opened on.
 - Each time block will change color indicating whether the time block is past (grey) present (red) or future (green)
 
-## Current Bugs
-- This page definitely works on Google Chrome.
-- Tried to run on FireFox and for some reason the clicking inside the box doesn't allow the text field to appear for editing. 
