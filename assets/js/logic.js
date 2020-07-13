@@ -64,27 +64,33 @@ function loadTasks(){
     // if nothing in localStorage, create a new object to track all task status arrays
     if (!tasks) {
         tasks = {
-        nineAm: [],
-        tenAm: [],
-        elevenAm: [],
-        twelvePm: [],
-        onePm: [],
-        twoPm: [],
-        threePm: [],
-        fourPm: [],
-        fivePm: [],
+        nineAm: [""],
+        tenAm: [""],
+        elevenAm: [""],
+        twelvePm: [""],
+        onePm: [""],
+        twoPm: [""],
+        threePm: [""],
+        fourPm: [""],
+        fivePm: [""],
         };
     }
-    // loop over object properties
-    $.each(tasks, function(list, arr) {
-        console.log(list, arr);
-        // then loop over sub-array
-         arr.forEach(function(task) {
-            //   auditTasks();
-            
-         createTask(list, task.text);
-         });
-    });
+    //hard code each object into the list until i can figure out how to loop
+    //check if the value is falsy create an empty set of text for each object array
+    // if (tasks.nineAm[0].text === undefined || tasks.nineAm[0].text === null){
+    //     tasks.nineAm[0].text = "";
+    // } 
+
+    createTask("nineAm", tasks.nineAm[0].text);
+    createTask("tenAm", tasks.tenAm[0].text);
+    createTask("elevenAm", tasks.elevenAm[0].text);
+    createTask("twelvePm", tasks.twelvePm[0].text);
+    createTask("onePm", tasks.onePm[0].text);
+    createTask("twoPm", tasks.twoPm[0].text);
+    createTask("threePm", tasks.threePm[0].text);
+    createTask("fourPm", tasks.fourPm[0].text);
+    createTask("fivePm", tasks.fivePm[0].text);
+
     console.log(tasks);
 }
 
@@ -97,6 +103,9 @@ loadTasks();
 /************** CREATE TASK START***************** */
 /************************************************* */
 function createTask(list, taskText){
+    if (!taskText){
+        taskText = "";
+    }
     
     //select the area to append to loops through each element with the list array name
     var appendHere = document.querySelector(".row-" + list + "Append");
@@ -255,9 +264,7 @@ $(".row").on("click", ".save-button", function(){
     var tempArr = []
 
 //   //add task data to the temp array as an object
-    tempArr.push({
-    text: text,
-    });
+    tempArr.push({text: text,});
     
     // console.log("text content of updated children were stored in a temp array as objects")
     console.log(tempArr);
