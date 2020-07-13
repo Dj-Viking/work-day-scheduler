@@ -13,7 +13,7 @@
 
 
 //display current date at the top of the page
-var tasks = {};
+var tasksList = {};
 
 var tempArr = []
 
@@ -49,21 +49,21 @@ function time() {
     }
 }
   setInterval(time, 100);
-//   setInterval(auditTasks, 1000);
+//   setInterval(audittasksList, 1000);
 
-function saveTasks() {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+function savetasksList() {
+    localStorage.setItem("tasksList", JSON.stringify(tasksList));
 };
 
 /**************** LOAD TASK START ***************** */
 /************************************************* */
 
-function loadTasks(){
-    tasks = JSON.parse(localStorage.getItem("tasks"));
+function loadtasksList(){
+    tasksList = JSON.parse(localStorage.getItem("tasksList"));
 
     // if nothing in localStorage, create a new object to track all task status arrays
-    if (!tasks) {
-        tasks = {
+    if (!tasksList) {
+        tasksList = {
         nineAm: [""],
         tenAm: [""],
         elevenAm: [""],
@@ -77,25 +77,25 @@ function loadTasks(){
     }
     //hard code each object into the list until i can figure out how to loop
     //check if the value is falsy create an empty set of text for each object array
-    // if (tasks.nineAm[0].text === undefined || tasks.nineAm[0].text === null){
-    //     tasks.nineAm[0].text = "";
+    // if (tasksList.nineAm[0].text === undefined || tasksList.nineAm[0].text === null){
+    //     tasksList.nineAm[0].text = "";
     // } 
 
-    createTask("nineAm", tasks.nineAm[0].text);
-    createTask("tenAm", tasks.tenAm[0].text);
-    createTask("elevenAm", tasks.elevenAm[0].text);
-    createTask("twelvePm", tasks.twelvePm[0].text);
-    createTask("onePm", tasks.onePm[0].text);
-    createTask("twoPm", tasks.twoPm[0].text);
-    createTask("threePm", tasks.threePm[0].text);
-    createTask("fourPm", tasks.fourPm[0].text);
-    createTask("fivePm", tasks.fivePm[0].text);
+    createTask("nineAm", tasksList.nineAm[0].text);
+    createTask("tenAm", tasksList.tenAm[0].text);
+    createTask("elevenAm", tasksList.elevenAm[0].text);
+    createTask("twelvePm", tasksList.twelvePm[0].text);
+    createTask("onePm", tasksList.onePm[0].text);
+    createTask("twoPm", tasksList.twoPm[0].text);
+    createTask("threePm", tasksList.threePm[0].text);
+    createTask("fourPm", tasksList.fourPm[0].text);
+    createTask("fivePm", tasksList.fivePm[0].text);
 
-    console.log(tasks);
+    console.log(tasksList);
 }
 
-// auditTasks();
-loadTasks();
+// audittasksList();
+loadtasksList();
 
 /**************** LOAD TASK END ***************** */
 /************************************************* */
@@ -119,7 +119,7 @@ function createTask(list, taskText){
     loadDiv.className += "height-full-row no-left-margin padding-left-some ml-2";
     //append the new div with the localStorage info on it to the part of the document we want to append to.
     appendHere.appendChild(loadDiv);
-    // auditTasks();
+    // audittasksList();
     
 }
 /************** CREATE TASK END ***************** */
@@ -127,7 +127,7 @@ function createTask(list, taskText){
 
 /**************** AUDIT TASK START ***************** */
 /************************************************* */
-function auditTasks(){
+function audittasksList(){
     
     
     var d = new Date();
@@ -208,12 +208,12 @@ function auditTasks(){
     }
     
 }
-setInterval(auditTasks, 100);     
+setInterval(audittasksList, 100);     
    
 /**************** AUDIT TASK END ***************** */
 /************************************************* */
 
-/*************** EDIT TASKS START **************** */
+/*************** EDIT tasksList START **************** */
 /************************************************ */
 //select the element we want to edit by clicking it
 // clicking <p> element makes it <textarea> to edit inside
@@ -275,9 +275,9 @@ $(".row").on("click", ".save-button", function(){
        .attr("id")
        .replace("row-", "");//whatever is in the quotes we are using for the name of the array that we are storing this task in
 
-    // //update array and tasks object and save
-     tasks[arrName] = tempArr;
-     saveTasks();
+    // //update array and tasksList object and save
+     tasksList[arrName] = tempArr;
+     savetasksList();
     // //$(this).children() refers to the parent of the children
     // //and displays the array of children element objects inside.
     // //console.log($(this).children());
@@ -292,7 +292,7 @@ $(".row").on("click", ".save-button", function(){
     console.log("converted <textarea> back into <div>");
 
 });
-/*************** EDIT TASKS END **************** */
+/*************** EDIT tasksList END **************** */
 /************************************************ */
 
 
